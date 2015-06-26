@@ -1,0 +1,17 @@
+.icon {
+  background-image: url("../icon1-sprite.png"); }
+
+.icon-comment10 {
+  background-position: -0.25rem -0.25rem;
+  width: 4.625rem;
+  height: 4.0625rem; }
+
+.icon-laugh1 {
+  background-position: -5.375rem -0.25rem;
+  width: 4.0625rem;
+  height: 4.0625rem; }
+
+.icon-laugh6 {
+  background-position: -0.25rem -4.8125rem;
+  width: 4.0625rem;
+  height: 4.0625rem; }
