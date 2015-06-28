@@ -11,7 +11,7 @@ var tasks = requireDir('./tasks');
     ✓gulp sass     ->实时sass监控
     ✓gulp release   ->部署程序.
       ♡gulp imagemin ->图片压缩.
-      ♡gulp usemin
+      ♡gulp usemin   ->uglify concat 
       ♡gulp ftp -l  ->本地服务器的上传
       ♡gulp ftp -r  ->远程服务器的上床
     ✓gulp jasmine   ->单元测试

@@ -46,7 +46,6 @@ gulp.task('open', function() {
       url: 'http://localhost:'+(port-1),
       app: 'google chrome'
     };
-    console.log(options);
     gulp.src(currentDirectory+'index.html')
       .pipe(open('', options));
   })
