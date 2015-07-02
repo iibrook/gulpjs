@@ -2,11 +2,10 @@ var gulp = require('gulp');
 var reveasy = require('gulp-rev-easy');
 var dir = require('./directory.js');
 
-var currentDirectory = dir.currentDirectory;
-var release = dir.currentDirectory + 'release/'
+var releaseDirectory = dir.currentDirectory + 'release/'
 
 gulp.task("reveasy", function (argument) {
-  return gulp.src(currentDirectory + '*.html')
+  return gulp.src(releaseDirectory+ '*.html')
         .pipe(reveasy({
             fileTypes:['js','css','img'],
             elementAttributes:{
@@ -24,5 +23,5 @@ gulp.task("reveasy", function (argument) {
                 }
             }
         }))
-        .pipe(gulp.dest(release))
+        .pipe(gulp.dest(releaseDirectory))
 });

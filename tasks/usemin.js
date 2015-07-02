@@ -4,7 +4,6 @@ var uglify = require('gulp-uglify');
 var minifyHtml = require('gulp-minify-html');
 var minifyCss = require('gulp-minify-css');
 var rev = require('gulp-rev');
-var del = require('del');
 var autoprefixer = require('gulp-autoprefixer');
 var dir = require('./directory.js');
 
@@ -39,10 +38,7 @@ gulp.task('usemin', function() {
     .pipe(gulp.dest(release));
 });
 
-gulp.task('clean', function() {
-  del([release + 'css', release + 'js'], function(file) {
-  })
-});
+
 
 
 /* Tutorial
