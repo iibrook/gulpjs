@@ -9,7 +9,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var dir = require('./directory.js');
 
 var currentDirectory = dir.currentDirectory;
-var release = dir.currentDirectory + 'release/'
+var release = dir.currentDirectory + 'release/';
 
 
 
@@ -17,10 +17,13 @@ gulp.task('usemin', function() {
   return gulp.src(currentDirectory + '*.html')
     .pipe(usemin({
       css: [ autoprefixer({
-            browsers: ['last 20 versions'],
-            //last 10 version for desktop browser
-            //last 20 version for mobile browser
-            //last 100 version most browser
+        browsers: [
+          'last 5 versions',
+          'chrome 30',
+          'safari 5',
+          'ie 8',
+          'opera 12.1'
+        ],
             cascade: false
         }),
         minifyCss(),
