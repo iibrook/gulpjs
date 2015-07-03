@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var usemin = require('gulp-usemin');
+var gulpusemin = require('gulp-usemin');
 var uglify = require('gulp-uglify');
 var minifyHtml = require('gulp-minify-html');
 var minifyCss = require('gulp-minify-css');
@@ -14,24 +14,28 @@ var release = dir.currentDirectory + 'release/';
 
 gulp.task('usemin', function() {
   return gulp.src(currentDirectory + '*.html')
-    .pipe(usemin({
+    .pipe(gulpusemin({
       css: [ autoprefixer({
         browsers: [
-          'last 5 versions',
-          'chrome 30',
-          'safari 5',
-          'ie 8',
-          'opera 12.1'
+            'last 10 versions',
+            'chrome 30',
+            'safari 5',
+            'ie 7',
+            'opera 10',
         ],
-            cascade: false
+        cascade: false
         }),
         minifyCss(),
         'concat',
-        rev()],
+        //rev()
+      ],
       html: [minifyHtml({
         empty: true
       })],
-      js: [uglify(), rev()],
+      js: [
+          uglify(),
+          //rev()
+      ],
       inlinejs: [uglify()],
       inlinecss: [minifyCss(), 'concat']
     }))

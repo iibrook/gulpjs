@@ -13,10 +13,11 @@ gulp.task('sprite', function() {
     gulp_sprite.create({
       src: spriteDir + '*',
       out: imgDirectory,
-      process: 'scss',
-      style: currentDirectory + 'sass/' + spriteName + '-sprite.scss',
+      process: 'css',
+      style: currentDirectory + 'css/' + spriteName + '-sprite.css',
       name: spriteName + '-sprite',
-      orientation: 'binary-tree'
+      orientation: 'vertical',
+        margin:20
     }, function() {
       console.log(spriteDir + ' is done!');
     });
