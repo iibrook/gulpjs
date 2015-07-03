@@ -1,21 +1,20 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
-var ftp = require('gulp-ftp');
+var ftp = require('vinyl-ftp');
 var dir=require('./directory.js');
-var config=require('../ftpConfig.js');
-
+var ftpConfig=require('../ftpConfig.js');
 
 var imgName=dir.imgName;
 var arg = process.argv;
 for (var i in arg) {
   if (arg.indexOf('-l') > -1 || arg.indexOf('-local') > -1|| arg.indexOf('-localHost')>-1) {
-    var ftpServer=ftp.localServer;
-    var serverUrl=ftp.localServerUrl;
+    var ftpServer=ftpConfig.localServer;
+    var serverUrl=ftpConfig.localServerUrl;
     break;
   };
   if(arg.indexOf('-r')>-1||arg.indexOf('-remote')>-1||arg.indexOf('-remotes')>-1){
-    var ftpServer=ftp.remoteServer;
-    var serverUrl=ftp.remoteServerUrl;
+    var ftpServer=ftpConfig.remoteServer;
+    var serverUrl=ftpConfig.remoteServerUrl;
     break
   };
 }
